@@ -1,152 +1,264 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">SW35 Store</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-4" href="#">
+      <i class="bi bi-shop me-2"></i>SW35 Store
+    </a>
+
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav mx-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home168</a>
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#products">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
         </li>
       </ul>
 
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-outline-light position-relative">
+          <i class="bi bi-cart3"></i>
+          Cart
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            3
+          </span>
+        </button>
+
+        <button class="btn btn-light">
+          <i class="bi bi-person-circle me-1"></i>
+          Login
+        </button>
+      </div>
     </div>
   </div>
 </nav>
-<app-main-slider-component></app-main-slider-component>
 
-<div class="container mt-2">
-  <div class="row">
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <div class="row align-items-center min-vh-50 py-5">
+
+      <div class="col-lg-6">
+        <span class="badge bg-primary-subtle text-primary mb-3 p-2">
+          Welcome to SW35 Store
+        </span>
+
+        <h1 class="display-4 fw-bold mb-3">
+          Discover Your
+          <span class="text-primary">Favorite Products</span>
+        </h1>
+
+        <p class="text-muted fs-5 mb-4">
+          Find quality products at affordable prices.
+          Shop online and enjoy the best shopping experience.
+        </p>
+
+        <a href="#products" class="btn btn-primary btn-lg px-4">
+          Shop Now <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+      </div>
+
+      <div class="col-lg-6 text-center mt-4 mt-lg-0">
+        <img
+          src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=900"
+          class="img-fluid rounded-4 shadow"
+          alt="Shopping store"
+          style="max-height: 380px; object-fit: cover;">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Main Products -->
+<section class="container py-5" id="products">
+
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <span class="text-primary fw-semibold">OUR COLLECTION</span>
+      <h2 class="fw-bold mb-0">Featured Products</h2>
+      <p class="text-muted mb-0">Explore our latest products</p>
+    </div>
+
+    <a href="#" class="btn btn-outline-primary">
+      View All <i class="bi bi-arrow-right"></i>
+    </a>
+  </div>
+
+  <!-- Search -->
+  <div class="row mb-4">
+    <div class="col-md-5 ms-auto">
+      <div class="input-group">
+        <span class="input-group-text bg-white">
+          <i class="bi bi-search"></i>
+        </span>
+        <input type="text" class="form-control"
+               placeholder="Search products...">
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Grid -->
+  <div class="row g-4">
+
     @for (item of product_list; track item.id) {
-      <div class="col-3">
-        <app-product-card-component [product]="item" ]></app-product-card-component>
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <app-product-card-component
+          [product]="item">
+        </app-product-card-component>
       </div>
     }
 
-
   </div>
-</div>
+
+</section>
 
 
-<!-- Footer -->
-<footer class="bg-dark text-white pt-5 pb-4 mt-2">
-  <div class="container">
+<!-- About Section -->
+<section class="bg-light py-5" id="about">
+  <div class="container text-center">
+    <span class="text-primary fw-semibold">WHY CHOOSE US</span>
+    <h2 class="fw-bold mb-4">Shopping Made Simple</h2>
 
-    <div class="row">
+    <div class="row g-4">
 
-      <!-- About -->
-      <div class="col-md-4 mb-4">
-        <h5 class="text-uppercase fw-bold">My Website</h5>
-        <p class="text-white-50">
-          We provide quality products and services for our customers.
-          Thank you for visiting our website.
-        </p>
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded-4 h-100 shadow-sm">
+          <i class="bi bi-truck fs-1 text-primary"></i>
+          <h5 class="fw-bold mt-3">Fast Delivery</h5>
+          <p class="text-muted mb-0">
+            Get your products delivered conveniently.
+          </p>
+        </div>
       </div>
 
-      <!-- Quick Links -->
-      <div class="col-md-2 mb-4">
-        <h5 class="fw-bold">Links</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2">
-            <a href="#" class="text-white-50 text-decoration-none">
-              Home
-            </a>
-          </li>
-          <li class="mb-2">
-            <a href="#" class="text-white-50 text-decoration-none">
-              About
-            </a>
-          </li>
-          <li class="mb-2">
-            <a href="#" class="text-white-50 text-decoration-none">
-              Products
-            </a>
-          </li>
-          <li class="mb-2">
-            <a href="#" class="text-white-50 text-decoration-none">
-              Contact
-            </a>
-          </li>
-        </ul>
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded-4 h-100 shadow-sm">
+          <i class="bi bi-shield-check fs-1 text-primary"></i>
+          <h5 class="fw-bold mt-3">Secure Payment</h5>
+          <p class="text-muted mb-0">
+            Shop with confidence and security.
+          </p>
+        </div>
       </div>
 
-      <!-- Services -->
-      <div class="col-md-3 mb-4">
-        <h5 class="fw-bold">Services</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2 text-white-50">Web Development</li>
-          <li class="mb-2 text-white-50">Mobile Development</li>
-          <li class="mb-2 text-white-50">Database Design</li>
-          <li class="mb-2 text-white-50">IT Training</li>
-        </ul>
-      </div>
-
-      <!-- Contact -->
-      <div class="col-md-3 mb-4">
-        <h5 class="fw-bold">Contact Us</h5>
-
-        <p class="text-white-50 mb-2">
-          <i class="bi bi-geo-alt"></i>
-          Phnom Penh, Cambodia
-        </p>
-
-        <p class="text-white-50 mb-2">
-          <i class="bi bi-envelope"></i>
-          example@gmail.com
-        </p>
-
-        <p class="text-white-50 mb-3">
-          <i class="bi bi-telephone"></i>
-          +855 12 345 678
-        </p>
-
-        <!-- Social Media -->
-        <div>
-          <a href="#" class="text-white me-3 fs-5">
-            <i class="bi bi-facebook"></i>
-          </a>
-
-          <a href="#" class="text-white me-3 fs-5">
-            <i class="bi bi-telegram"></i>
-          </a>
-
-          <a href="#" class="text-white me-3 fs-5">
-            <i class="bi bi-youtube"></i>
-          </a>
-
-          <a href="#" class="text-white fs-5">
-            <i class="bi bi-github"></i>
-          </a>
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded-4 h-100 shadow-sm">
+          <i class="bi bi-headset fs-1 text-primary"></i>
+          <h5 class="fw-bold mt-3">Customer Support</h5>
+          <p class="text-muted mb-0">
+            We are here to help you anytime.
+          </p>
         </div>
       </div>
 
     </div>
+  </div>
+</section>
 
-    <hr class="border-secondary">
 
-    <!-- Copyright -->
-    <div class="row align-items-center">
+<!-- Footer -->
+<footer class="bg-dark text-white pt-5 pb-3" id="contact">
+  <div class="container">
 
-      <div class="col-md-6 text-center text-md-start">
-        <p class="mb-0 text-white-50">
-          © 2026 My Website. All Rights Reserved.
+    <div class="row g-4">
+
+      <!-- About -->
+      <div class="col-lg-4 col-md-6">
+        <h4 class="fw-bold">
+          <i class="bi bi-shop me-2"></i>SW35 Store
+        </h4>
+
+        <p class="text-white-50 mt-3">
+          Your trusted online shopping destination.
+          We provide quality products and excellent
+          customer service.
         </p>
+
+        <div class="d-flex gap-3 fs-4">
+          <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white"><i class="bi bi-telegram"></i></a>
+          <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
+        </div>
       </div>
 
-      <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
-        <a href="#" class="text-white-50 text-decoration-none me-3">
-          Privacy Policy
-        </a>
+      <!-- Links -->
+      <div class="col-lg-2 col-md-6">
+        <h5 class="fw-bold mb-3">Quick Links</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
 
-        <a href="#" class="text-white-50 text-decoration-none">
-          Terms & Conditions
-        </a>
+      <!-- Services -->
+      <div class="col-lg-3 col-md-6">
+        <h5 class="fw-bold mb-3">Customer Service</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="#">Shopping Guide</a></li>
+          <li><a href="#">Payment Methods</a></li>
+          <li><a href="#">Delivery Information</a></li>
+          <li><a href="#">Return Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-lg-3 col-md-6">
+        <h5 class="fw-bold mb-3">Contact Us</h5>
+
+        <p class="text-white-50">
+          <i class="bi bi-geo-alt me-2"></i>
+          Phnom Penh, Cambodia
+        </p>
+
+        <p class="text-white-50">
+          <i class="bi bi-envelope me-2"></i>
+          example@gmail.com
+        </p>
+
+        <p class="text-white-50">
+          <i class="bi bi-telephone me-2"></i>
+          +855 12 345 678
+        </p>
       </div>
 
     </div>
 
+    <hr class="border-secondary mt-4">
+
+    <div class="d-flex flex-column flex-md-row
+                justify-content-between align-items-center">
+      <p class="text-white-50 mb-2 mb-md-0">
+        © 2026 SW35 Store. All Rights Reserved.
+      </p>
+
+      <div>
+        <a href="#" class="text-white-50 text-decoration-none me-3">
+          Privacy Policy
+        </a>
+        <a href="#" class="text-white-50 text-decoration-none">
+          Terms & Conditions
+        </a>
+      </div>
+    </div>
+
   </div>
 </footer>
-

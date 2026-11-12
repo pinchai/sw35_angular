@@ -1,5 +1,37 @@
-.card-img-top {
-  height: 200px;
-  width: 200px;
-  object-fit: contain;
+
+.product-card {
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+.product-card .card-img-top {
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.product-card .btn-primary {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.product-card .btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* Limits text to 3 lines */
+  overflow: hidden;
+
+  /* Standard property for future-proofing */
+  line-clamp: 3;
 }

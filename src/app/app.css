@@ -1,0 +1,35 @@
+
+.hero-section {
+  background: linear-gradient(
+    120deg,
+    #f0f5ff,
+    #ffffff
+  );
+}
+
+.min-vh-50 {
+  min-height: 50vh;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #adb5bd;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  padding-left: 5px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 75px;
+}
